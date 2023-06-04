@@ -1,30 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ContactUs from './pages/ContactUs'
+import Home from './pages/Home'
+import Book from './pages/Book';
+import Menu from './pages/Menu';
+import OrderOnline from './pages/OrderOnline';
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
     <body>
-      <Header></Header>
-      <Footer></Footer>
+      <Router>
+        <Header></Header>
+        <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/menu' element={<Menu/>}/>
+            <Route path='/reservations' element={<Book/>} />
+            <Route path='/order' element={<OrderOnline/>}/>
+            <Route path='/contact' element={<ContactUs/>}/>
+        </Routes>
+        {/* <LandingSection></LandingSection> */}
+        {/* <LandingPage></LandingPage> */}
+        {/* <Reservations></Reservations> */}
+        {/* <Testimonials></Testimonials> */}
+        {/* <ContactUs></ContactUs> */}
+        <Footer></Footer>
+      </Router>
     </body>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
   );
 }
 

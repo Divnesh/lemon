@@ -8,9 +8,9 @@ export default function Footer() {
 
   return (
     <footer>
-        <Paper sx={{marginTop: 'calc(10% + 60px)',
+        <Paper sx={{
             width: '100%',
-            position: 'fixed',
+            position: 'relative',
             bottom: 0,
             width: '100%'
             }} component="footer" square variant="outlined">

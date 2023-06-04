@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -15,7 +16,28 @@ import AdbIcon from '@mui/icons-material/Adb';
 import Logo from '../images/logo.png';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
-const pages = ['Home', 'About', 'Menu', 'Reservations', 'Order Online'];
+const pages = [
+    { 
+        name: 'Home',
+        link: "/" 
+    },
+    { 
+        name: 'Menu',
+        link: "/menu" 
+    },
+    { 
+        name: 'Reservations',
+        link: "/reservations" 
+    },
+    { 
+        name: 'Order Online',
+        link: "/order" 
+    },
+    { 
+        name: 'Contact Us',
+        link: "/contact" 
+    },
+];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -77,9 +99,11 @@ function Header() {
                     }}
                     >
                     {pages.map((page) => (
-                        <MenuItem key={page} onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">{page}</Typography>
-                        </MenuItem>
+                        <Link to={page.link}>
+                            <MenuItem key={page.name}>
+                                <Typography textAlign="center">{page.name}</Typography>
+                            </MenuItem>
+                        </Link>
                     ))}
                     </Menu>
                 </Box>
@@ -92,13 +116,15 @@ function Header() {
 
                 <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end'}}>
                     {pages.map((page) => (
-                    <Button
-                        key={page}
-                        onClick={handleCloseNavMenu}
-                        sx={{ my: 2, color: 'black', display: 'block' }}
-                    >
-                        {page}
-                    </Button>
+                        <Link to={page.link}>
+                            <Button
+                                key={page.name}
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: 'black', display: 'block' }}
+                            >
+                                {page.name}
+                            </Button>
+                        </Link>
                     ))}
                 </Box>
                 <Box sx={{ flexGrow: 0 }}>
