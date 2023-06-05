@@ -6,9 +6,11 @@ import { styled } from '@mui/material/styles';
 import { Container, Typography, Button } from "@mui/material";
 import  foodphoto from "../images/restauranfood.jpg"
 import Text from "./Text";
-
+import { Link } from "react-router-dom";
 
 const LandingSection = ({ ...boxProps }) => {
+
+
   return (
     <Container maxWidth='100' maxHeight={250} sx={{backgroundColor: '#495E57', marginTop: 2, paddingBottom: 3}}>
         <Grid container spacing={2} columns={{xs:6,sm:12}}>
@@ -22,7 +24,7 @@ const LandingSection = ({ ...boxProps }) => {
                 recipes served with a modern twist.">
                 </Text>
                 <Box paddingTop={2} sx={{display: "flex", justifyContent: "center"}}>
-                    <Button variant="contained" sx={{ color:"black", backgroundColor: "#F4CE14"}}>Reserve a Table</Button>
+                    <Link to={'/reservations'}><Button  variant="contained" sx={{ color:"black", backgroundColor: "#F4CE14"}}>Reserve a Table</Button></Link>
                 </Box>
             </Grid>
             <Grid item xs={6} sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: "center"}}>

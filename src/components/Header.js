@@ -17,25 +17,25 @@ import Logo from '../images/logo.png';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 const pages = [
-    { 
+    {
         name: 'Home',
-        link: "/" 
+        link: "/"
     },
-    { 
+    {
         name: 'Menu',
-        link: "/menu" 
+        link: "/menu"
     },
-    { 
+    {
         name: 'Reservations',
-        link: "/reservations" 
+        link: "/reservations"
     },
-    { 
+    {
         name: 'Order Online',
-        link: "/order" 
+        link: "/order"
     },
-    { 
+    {
         name: 'Contact Us',
-        link: "/contact" 
+        link: "/contact"
     },
 ];
 

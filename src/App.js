@@ -6,6 +6,8 @@ import Home from './pages/Home'
 import Book from './pages/Book';
 import Menu from './pages/Menu';
 import OrderOnline from './pages/OrderOnline';
+import { AlertProvider } from './context/alertContext';
+// import Alert from './components/Alert';
 
 import {
   BrowserRouter as Router,
@@ -16,22 +18,19 @@ import {
 function App() {
   return (
     <body>
-      <Router>
-        <Header></Header>
-        <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/menu' element={<Menu/>}/>
-            <Route path='/reservations' element={<Book/>} />
-            <Route path='/order' element={<OrderOnline/>}/>
-            <Route path='/contact' element={<ContactUs/>}/>
-        </Routes>
-        {/* <LandingSection></LandingSection> */}
-        {/* <LandingPage></LandingPage> */}
-        {/* <Reservations></Reservations> */}
-        {/* <Testimonials></Testimonials> */}
-        {/* <ContactUs></ContactUs> */}
-        <Footer></Footer>
-      </Router>
+      <AlertProvider>
+        <Router>
+          <Header></Header>
+          <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/menu' element={<Menu/>}/>
+              <Route path='/reservations' element={<Book/>} />
+              <Route path='/order' element={<OrderOnline/>}/>
+              <Route path='/contact' element={<ContactUs/>}/>
+          </Routes>
+          <Footer></Footer>
+        </Router>
+      </AlertProvider>
     </body>
   );
 }
