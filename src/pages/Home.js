@@ -6,7 +6,7 @@ function Home() {
   return (
     <div>
         <LandingSection></LandingSection>
-         <LandingPage></LandingPage> 
+         <LandingPage></LandingPage>
          <Testimonials></Testimonials>
     </div>
   );

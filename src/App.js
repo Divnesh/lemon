@@ -6,8 +6,6 @@ import Home from './pages/Home'
 import Book from './pages/Book';
 import Menu from './pages/Menu';
 import OrderOnline from './pages/OrderOnline';
-import { AlertProvider } from './context/alertContext';
-// import Alert from './components/Alert';
 
 import {
   BrowserRouter as Router,
@@ -17,8 +15,7 @@ import {
 
 function App() {
   return (
-    <body>
-      <AlertProvider>
+    <div>
         <Router>
           <Header></Header>
           <Routes>
@@ -30,8 +27,7 @@ function App() {
           </Routes>
           <Footer></Footer>
         </Router>
-      </AlertProvider>
-    </body>
+    </div>
   );
 }
 

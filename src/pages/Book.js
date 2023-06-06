@@ -1,25 +1,11 @@
 import { useReducer, useState, useEffect } from 'react';
 import LandingSection from '../components/LandingSection';
 import Reservations from '../components/Reservations';
-import { fetchAPI } from '../API/api';
-
-const updateTimes = (state, action) => {
-  state = fetchAPI(new Date(action.type));
-  return state;
-}
+import {initializeTimes, updateTimes} from '../Main/main';
 
 function Book() {
 
-  const initializeTimes = fetchAPI(new Date());
-
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes);
-
-  // useEffect((date) => {
-  //   fetchAPI(date)
-  //   .then((response) => console.log(response))
-  //   .catch((error) => console.log(error));
-  // });
-
   return (
     <div>
         <LandingSection></LandingSection>
